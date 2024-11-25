@@ -1,0 +1,10 @@
+/* TreePage.css */
+
+/* Surcharge de la légende du carrousel */
+.carousel .legend {
+  background-color: rgba(0, 128, 0, 0.7) !important; /* Couleur de fond verte semi-transparente */
+  color: white !important; /* Couleur du texte en blanc */
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 8px; /* Optionnel : arrondir les bords */
+}
