@@ -4,7 +4,6 @@ import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import treesData from "../data/treesData";
 import './TreePage.css';
-import { QRCodeCanvas } from 'qrcode.react';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -12,9 +11,10 @@ function TreePage() {
   const { treeName } = useParams();
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
-  const tree = treesData[treeName]; 
+  const tree = treesData[treeName];
   const nextIndex = searchParams.get('nextIndex');
   const success = searchParams.get('success');
+  const isQuiz = searchParams.get('isQuiz') === 'true';
 
   useEffect(() => {
     if (success) {
@@ -26,11 +26,22 @@ function TreePage() {
     return <h1 className="text-center text-red-600">Arbre non trouvé</h1>;
   }
 
-  const treeUrl = `http://192.168.12.20:3000/arbre/${treeName}`;
+  const treeUrl = `http://192.168.12.25:3000/arbre/${treeName}`;
+  
+  const treeNames = Object.keys(treesData);
+  const currentIndex = treeNames.indexOf(treeName);
+
+  const isLastTree = currentIndex === treeNames.length - 1;
 
   const handleNext = () => {
-    if (nextIndex) {
-      navigate(`/jeu?currentIndex=${nextIndex}`);
+    if (nextIndex !== null) {
+      if (isQuiz) {
+        navigate(`/quizz?nextIndex=${nextIndex}&treeName=${treeName}`);
+      } else {
+        navigate(`/arbre/${treeName}?nextIndex=${nextIndex}`);
+      }
+    } else {
+      navigate(`/quizz?treeName=${treeName}`);
     }
   };
 
@@ -58,7 +69,6 @@ function TreePage() {
           <p className="text-gray-800 mt-2">{tree.description}</p>
         </div>
 
-        {/* Tree Characteristics */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="bg-green-600 text-white rounded-lg p-4">
             <h3 className="text-2xl font-semibold">Fruit</h3>
@@ -91,10 +101,9 @@ function TreePage() {
               src={tree.feuilleImage}
               alt={`Feuille de ${tree.name}`}
               className="object-cover h-48 w-full my-4 rounded-md shadow-lg"
-            /> 
+            />
           </div>
 
-          {/* Carrousel des saisons */}
           <div className="bg-green-600 text-white rounded-lg p-4">
             <Carousel
               showThumbs={false}
@@ -114,26 +123,31 @@ function TreePage() {
           </div>
         </div>
 
-        {/* QR Code Section */}
-        <div className="text-center my-8">
-          <h2 className="text-xl font-bold mb-4">Scan le QR code pour accéder à cette page</h2>
-          <QRCodeCanvas value={treeUrl} size={128} className="mx-auto" />
-        </div>
-
-        {/* Bouton de navigation pour la question suivante */}
-        {nextIndex && (
-          <div className="text-center mt-8">
-            <button
-              onClick={handleNext}
-              className="px-6 py-3 bg-green-500 text-white font-bold rounded-md shadow hover:bg-green-600"
-            >
-              ➔ Question suivante
-            </button>
-          </div>
+        {isQuiz && (
+          isLastTree ? (
+            <div className="text-center mt-8">
+              <button
+                onClick={handleNext}
+                className="px-6 py-3 bg-green-500 text-white font-bold rounded-md shadow hover:bg-green-600"
+              >
+                ➔ Passer au Quizz
+              </button>
+            </div>
+          ) : (
+            nextIndex !== null && (
+              <div className="text-center mt-8">
+                <button
+                  onClick={handleNext}
+                  className="px-6 py-3 bg-green-500 text-white font-bold rounded-md shadow hover:bg-green-600"
+                >
+                  ➔ Passer au Quizz
+                </button>
+              </div>
+            )
+          )
         )}
       </main>
 
-      {/* Footer Section */}
       <footer className="bg-green-600 text-white text-center py-4">
         <p>&copy; 2024 Arboretum Manoir d'argueil ODCVL.</p>
       </footer>

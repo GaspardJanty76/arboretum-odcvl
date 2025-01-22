@@ -4,13 +4,14 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import QRScanner from 'react-qr-scanner';
 import treesData from '../data/treesData';
+import parse from 'html-react-parser';
 
 function Game() {
   const [searchParams] = useSearchParams();
   const initialIndex = parseInt(searchParams.get('currentIndex')) || 0;
   const [currentIndex, setCurrentIndex] = useState(initialIndex);
   const [currentHint, setCurrentHint] = useState('');
-  const [errorToastShown, setErrorToastShown] = useState(false); // État pour le toaster d'échec
+  const [errorToastShown, setErrorToastShown] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -24,26 +25,26 @@ function Game() {
     if (data) {
       const url = new URL(data.text);
       const treeName = url.pathname.split('/').pop();
-  
+
       const treeKeys = Object.keys(treesData);
       const correctTreeKey = treeKeys[currentIndex];
-  
+
       if (treeName === correctTreeKey) {
         setTimeout(() => {
           if (currentIndex < treeKeys.length - 1) {
-            navigate(`/arbre/${treeName}?nextIndex=${currentIndex + 1}&success=true`);
-            setCurrentIndex(currentIndex + 1);
+            navigate(`/arbre/${treeName}?nextIndex=${currentIndex + 1}&isQuiz=true`);
           } else {
-            navigate('/quizz');
+            navigate(`/arbre/${treeName}?isQuiz=true`);
           }
         }, 1000);
       } else {
         if (!errorToastShown) {
           toast.error('Aïe, ce n\'est pas le bon arbre, retentez votre chance !');
           setErrorToastShown(true);
-          setTimeout(() => setErrorToastShown(false), 3000); // Réinitialise l'état après 3 secondes (la durée d'affichage du toaster)
+          setTimeout(() => setErrorToastShown(false), 3000);
         }
       }
+      
     }
   };
 
@@ -69,7 +70,9 @@ function Game() {
       <ToastContainer />
       <main>
         <h2 className="text-2xl font-semibold text-center mb-6">
-          Indice : <span className="text-green-600">{currentHint}</span>
+          Indice : 
+          <br></br>
+          <span className="text-green-600">{parse(currentHint)}</span>
         </h2>
         <div className="flex justify-center mb-8">
           <QRScanner
@@ -78,7 +81,8 @@ function Game() {
             onError={handleError}
             onScan={handleScan}
             key="environment"
-            constraints={{ audio: false, video: { facingMode: "environment" } }}
+          
+            constraints={{ audio: false, video: { facingMode: "environment" }}}
           />
         </div>
         <p className="text-center text-gray-600 italic">

@@ -4,7 +4,8 @@ import HomePage from "./pages/HomePage";
 import TreePage from "./pages/TreePage";
 import Game from "./pages/Game";
 import Quizz from './components/Quizz';
-
+import ResultPage from './pages/ResultPage';
+import QRCodePage from "./pages/QRCodePage";
 
 function App() {
   return (
@@ -16,6 +17,8 @@ function App() {
             <Route path="/quizz" element={<Quizz />} />
             <Route path="/arbre/:treeName" element={<TreePage />} />
             <Route path="/jeu" element={<Game />} />
+            <Route path="/fin" element={<ResultPage />} />
+            <Route path="/qr-codes" element={<QRCodePage />} />
           </Routes>
         </div>
       </div>
