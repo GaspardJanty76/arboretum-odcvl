@@ -1,37 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import treeData from '../data/treesData'; // Importer les données des arbres
+import treeData from '../data/treesData';
 
 function Quiz() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [isAnswerCorrect, setIsAnswerCorrect] = useState(null);
   const [showResult, setShowResult] = useState(false);
-  const [score, setScore] = useState(0);
   const [totalScore, setTotalScore] = useState(
-    parseInt(localStorage.getItem('totalScore') || '0') // Charger le score global stocké
+    parseInt(localStorage.getItem('totalScore') || '0')
   );
+
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
-
-  // Récupérer le nom de l'arbre depuis l'URL
   const treeName = searchParams.get('treeName');
   const nextIndex = searchParams.get('nextIndex');
-
-  // Vérifier si l'arbre existe dans treeData
   const tree = treeData[treeName];
 
-  // Réinitialiser les scores uniquement au démarrage du jeu
   useEffect(() => {
-    if (currentQuestionIndex === 0) {
-      // Réinitialiser le score uniquement si on est à la première question
-      setScore(0); // Réinitialiser le score local
-      setTotalScore(0); // Réinitialiser le score global
-      localStorage.setItem('totalScore', '0'); // Réinitialiser dans localStorage
+    if (currentQuestionIndex === 0 && !localStorage.getItem('quizStarted')) {
+      localStorage.setItem('quizStarted', 'true');
+      setTotalScore(0);
+      localStorage.setItem('totalScore', '0');
     }
-  }, [currentQuestionIndex]); // Ce useEffect s'exécute uniquement au démarrage du jeu
+  }, []);
 
-  // Si l'arbre n'existe pas, afficher une erreur
   if (!tree) {
     return (
       <div>
@@ -43,44 +36,34 @@ function Quiz() {
 
   const currentQuestion = tree.question;
 
-  // Fonction pour vérifier si l'option est une image
   const isImage = (choice) => /\.(jpg|jpeg|png|gif|svg)$/i.test(choice);
 
-  // Fonction de gestion du clic sur une réponse
   const handleAnswerClick = (choice) => {
     setSelectedAnswer(choice);
 
     if (choice === currentQuestion.correctAnswer) {
       setIsAnswerCorrect(true);
-      const updatedScore = score + 1;
-      setScore(updatedScore);
-
       const updatedTotalScore = totalScore + 1;
       setTotalScore(updatedTotalScore);
-      localStorage.setItem('totalScore', updatedTotalScore); // Stocker le score global
+      localStorage.setItem('totalScore', updatedTotalScore);
     } else {
       setIsAnswerCorrect(false);
     }
 
-    // Passer à la prochaine question ou afficher les résultats après un délai
-    setTimeout(() => {
-      setShowResult(true); // Affiche les résultats après une seule réponse
-    }, 2000); // Délai de 2 secondes avant d'afficher les résultats
+    setTimeout(() => setShowResult(true), 2000);
   };
 
-  // Fonction pour passer à la page des résultats (ou arbre suivant)
   const handleFinishQuiz = () => {
-    const finalScore = totalScore;
-
-    // Passe le score global à la page des résultats
-    navigate('/fin', { state: { globalScore: finalScore } });
+    navigate('/fin', { state: { globalScore: totalScore } });
+    localStorage.removeItem('quizStarted');
+    localStorage.removeItem('totalScore');
   };
 
   const handleNext = () => {
     if (nextIndex) {
       navigate(`/jeu?currentIndex=${nextIndex}`);
     } else {
-      handleFinishQuiz(); // Appelle la fonction qui gère la fin du quiz
+      handleFinishQuiz();
     }
   };
 
@@ -101,12 +84,9 @@ function Quiz() {
         {!showResult ? (
           <div>
             <h2 className="text-2xl font-semibold mb-6">
-              Question {currentQuestionIndex + 1}/{1} {/* Afficher le nombre total de questions */}
+              Question {currentQuestionIndex + 1}/{1}
             </h2>
-
             <p className="text-xl mb-4">{currentQuestion.text}</p>
-
-            {/* Grid pour centrer les boutons de réponse */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {currentQuestion.options.map((choice, index) => (
                 <button
@@ -130,7 +110,7 @@ function Quiz() {
                       className="max-h-48 w-full object-contain"
                     />
                   ) : (
-                    <span className="text-center text-lg">{choice}</span>
+                  <span className="text-center text-lg">{choice}</span>
                   )}
                 </button>
               ))}
@@ -139,10 +119,7 @@ function Quiz() {
         ) : (
           <div className="text-center">
             <h2 className="text-2xl font-bold">Résultat</h2>
-            <p className="text-xl">
-              Vous avez obtenu {score} sur {1}.
-            </p>
-
+            <p className="text-xl">Score actuel : {totalScore}</p>
             <div className="mt-6">
               <button
                 onClick={handleNext}

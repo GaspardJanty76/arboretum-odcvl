@@ -132,137 +132,137 @@ const treesData = {
     },
     },
 
-    // // frene
+    // frene
 
-    // frene: {
-    //   name: "Le Frêne",
-    //   latin: "Fraxinus Excelsior",
-    //   description: "Le frêne est un arbre élancé et robuste, reconnaissable à ses feuilles composées et son écorce grise et lisse lorsqu'il est jeune. Il est souvent associé à des paysages champêtres ou urbains en raison de sa capacité à s'adapter à différents environnements. Son bois souple et résistant est très prisé pour la fabrication d'outils et d'objets artisanaux. Le frêne symbolise la résilience et l'équilibre.",
-    //   fruit: "C’est la samare, c’est un fruit fin avec une graine et en forme d’ailes. Ce qui favorise leur dissémination par le vent.",
-    //   histoire: "Le frêne perd ses feuilles encore vertes en hiver, par contre les fruits restent en place tout l'hiver. Le frêne est un arbre qui représente la longévité et la force. Il est utilisé depuis la préhistoire de façon médicinale (douleurs articulaires) mais aussi pour les outils (manches de pelles ou autre) ou pour les arcs, car son bois est très souple.",
-    //   feuille: "Ce sont des feuilles composées, avec 5 à 11 folioles opposées ovales aux bords finement dentés. Elles mesurent entre 10 et 15 cm de long.",
-    //   fleur: "Les fleurs poussent en grappes, elles sont petites et jaune verdâtre.",
-    //   hint: "UN ARBRE DES BRANCHES.<br>DES <span class='red-text'><strong>_</strong></span>EUILLES.<br>DES PÉTIOLES.<br>DES FOLIOLES.<br>UN MONDE RAMIFIE<br>QUI BOUGE, BRUIT, BONDIT.<br>UN <span class='red-text'><strong>_</strong></span>OYAUME DE VERDURE<br>DE VERTIG<span class='red-text'><strong>_</strong></span>S ET DE VENT,<br>UN LABYRI<span class='red-text'><strong>_</strong></span>THE DE SOUFFLES<br>ET DE MURMURES.<br>UN ARBR<span class='red-text'><strong>_</strong></span> EN SOMME.<br><br>POEME DE JACQUES LACARRIERE",
-    //   saison: "",
-    //   fruitImage: "/images/erable/erable-fruit.jpg",
-    //   feuilleImage: "/images/erable/erable-feuille.jpg",
-    //   fleureImage: "/images/erable/erable-fleur.jpg",
-    //   saisons: [
-    //     { saison: "Printemps", image: "/images/chene/chene-printemps.png" },
-    //     { saison: "Été", image: "/images/chene/chene-ete.png" },
-    //     { saison: "Automne", image: "/images/chene/chene-automne.png" },
-    //     { saison: "Hiver", image: "/images/chene/chene-hiver.png" }
-    //   ],
-    //   question: {
-    //     text: "Comment se propagent les samares, graines du frêne, naturellement ?",
-    //     options: [
-    //         "Leur forme d’hélice leur permet de s’envoler grâce aux vents",
-    //         "Les écureuils les cachent sous les feuilles mortes",
-    //         "Les hommes les récoltent et les replantent",
-    //         "Les graines sont mangées par certains animaux et disséminées dans leurs crottes"
-    //     ],
-    //     correctAnswer: "Leur forme d’hélice leur permet de s’envoler grâce aux vents"
-    // },
-    // },
+    frene: {
+      name: "Le Frêne",
+      latin: "Fraxinus Excelsior",
+      description: "Le frêne est un arbre élancé et robuste, reconnaissable à ses feuilles composées et son écorce grise et lisse lorsqu'il est jeune. Il est souvent associé à des paysages champêtres ou urbains en raison de sa capacité à s'adapter à différents environnements. Son bois souple et résistant est très prisé pour la fabrication d'outils et d'objets artisanaux. Le frêne symbolise la résilience et l'équilibre.",
+      fruit: "C’est la samare, c’est un fruit fin avec une graine et en forme d’ailes. Ce qui favorise leur dissémination par le vent.",
+      histoire: "Le frêne perd ses feuilles encore vertes en hiver, par contre les fruits restent en place tout l'hiver. Le frêne est un arbre qui représente la longévité et la force. Il est utilisé depuis la préhistoire de façon médicinale (douleurs articulaires) mais aussi pour les outils (manches de pelles ou autre) ou pour les arcs, car son bois est très souple.",
+      feuille: "Ce sont des feuilles composées, avec 5 à 11 folioles opposées ovales aux bords finement dentés. Elles mesurent entre 10 et 15 cm de long.",
+      fleur: "Les fleurs poussent en grappes, elles sont petites et jaune verdâtre.",
+      hint: "UN ARBRE DES BRANCHES.<br>DES <span class='red-text'><strong>_</strong></span>EUILLES.<br>DES PÉTIOLES.<br>DES FOLIOLES.<br>UN MONDE RAMIFIE<br>QUI BOUGE, BRUIT, BONDIT.<br>UN <span class='red-text'><strong>_</strong></span>OYAUME DE VERDURE<br>DE VERTIG<span class='red-text'><strong>_</strong></span>S ET DE VENT,<br>UN LABYRI<span class='red-text'><strong>_</strong></span>THE DE SOUFFLES<br>ET DE MURMURES.<br>UN ARBR<span class='red-text'><strong>_</strong></span> EN SOMME.<br><br>POEME DE JACQUES LACARRIERE",
+      saison: "",
+      fruitImage: "/images/erable/erable-fruit.jpg",
+      feuilleImage: "/images/erable/erable-feuille.jpg",
+      fleureImage: "/images/erable/erable-fleur.jpg",
+      saisons: [
+        { saison: "Printemps", image: "/images/chene/chene-printemps.png" },
+        { saison: "Été", image: "/images/chene/chene-ete.png" },
+        { saison: "Automne", image: "/images/chene/chene-automne.png" },
+        { saison: "Hiver", image: "/images/chene/chene-hiver.png" }
+      ],
+      question: {
+        text: "Comment se propagent les samares, graines du frêne, naturellement ?",
+        options: [
+            "Leur forme d’hélice leur permet de s’envoler grâce aux vents",
+            "Les écureuils les cachent sous les feuilles mortes",
+            "Les hommes les récoltent et les replantent",
+            "Les graines sont mangées par certains animaux et disséminées dans leurs crottes"
+        ],
+        correctAnswer: "Leur forme d’hélice leur permet de s’envoler grâce aux vents"
+    },
+    },
 
-    // //arbre aux 40 ecus
+    //arbre aux 40 ecus
 
-    // arbreauxecus: {
-    //   name: "Arbre aux 40 ecus",
-    //   latin: "Ginkgo Biloba",
-    //   description: "",
-    //   fruit: "L’arbre est dioïque, c’est à dire que chaque arbre est soit mâle, soit femelle. Les arbres femelles forment des « fruits » jaunes dont on peut également utiliser l’amande.",
-    //   histoire: "C’est la plus ancienne famille d’arbres connue (270 millions d’années). Le Ginko est très utilisé en médecine car il a des propriétés qui favorisent la digestion. La croissance de l’arbre est lente et il a une durée de vie très longue (plus de 100 arbres de plus de 1000 ans). La feuille de Ginkgo est le symbole stylisé de la ville de Tokyo.",
-    //   feuille: "Ce sont des feuilles simples, elles sont uniques parmi les arbres, elles forment 2 lobes en forme de palmes et ne présentent pas de nervure centrale (contrairement à la quasi-totalité des plantes).",
-    //   fleur: "Les fleurs mâles sont des chatons jaunes pendant de 4 à 8 cm de long. Les arbres femelles ont des ovules qui forment des boules.",
-    //   hint: "On m’appelle l’arbre aux 40 écus pour la couleur dorée que mes feuilles prennent à l’automne. Bien caché, je suis le seul de mon espèce dans le parc mais de mon emplacement j’ai une très belle vue sur le château mais aussi sur le village d’Argueil !",
-    //   saison: "",
-    //   fruitImage: "/images/erable/erable-fruit.jpg",
-    //   feuilleImage: "/images/erable/erable-feuille.jpg",
-    //   fleureImage: "/images/erable/erable-fleur.jpg",
-    //   saisons: [
-    //     { saison: "Printemps", image: "/images/chene/chene-printemps.png" },
-    //     { saison: "Été", image: "/images/chene/chene-ete.png" },
-    //     { saison: "Automne", image: "/images/chene/chene-automne.png" },
-    //     { saison: "Hiver", image: "/images/chene/chene-hiver.png" }
-    //   ],
-    //   question: {
-    //     text: "Lequel de ces événements s’est passé avant la création de la famille du Gingko Biloba ?",
-    //     options: [
-    //         "L’apparition des dinosaures (230 millions d’années)",
-    //         "La naissance des premiers Homo habilis (2,8 millions d’années)",
-    //         "La création de l’univers due au Big Bang (13,8 milliards d’années)",
-    //         "L’apparition des premières plantes à fleurs (130 millions d’années)"
-    //     ],
-    //     correctAnswer: "La création de l’univers due au Big Bang (13,8 milliards d’années)"
-    // },
-    // },
+    arbreauxecus: {
+      name: "Arbre aux 40 ecus",
+      latin: "Ginkgo Biloba",
+      description: "",
+      fruit: "L’arbre est dioïque, c’est à dire que chaque arbre est soit mâle, soit femelle. Les arbres femelles forment des « fruits » jaunes dont on peut également utiliser l’amande.",
+      histoire: "C’est la plus ancienne famille d’arbres connue (270 millions d’années). Le Ginko est très utilisé en médecine car il a des propriétés qui favorisent la digestion. La croissance de l’arbre est lente et il a une durée de vie très longue (plus de 100 arbres de plus de 1000 ans). La feuille de Ginkgo est le symbole stylisé de la ville de Tokyo.",
+      feuille: "Ce sont des feuilles simples, elles sont uniques parmi les arbres, elles forment 2 lobes en forme de palmes et ne présentent pas de nervure centrale (contrairement à la quasi-totalité des plantes).",
+      fleur: "Les fleurs mâles sont des chatons jaunes pendant de 4 à 8 cm de long. Les arbres femelles ont des ovules qui forment des boules.",
+      hint: "On m’appelle l’arbre aux 40 écus pour la couleur dorée que mes feuilles prennent à l’automne. Bien caché, je suis le seul de mon espèce dans le parc mais de mon emplacement j’ai une très belle vue sur le château mais aussi sur le village d’Argueil !",
+      saison: "",
+      fruitImage: "/images/erable/erable-fruit.jpg",
+      feuilleImage: "/images/erable/erable-feuille.jpg",
+      fleureImage: "/images/erable/erable-fleur.jpg",
+      saisons: [
+        { saison: "Printemps", image: "/images/chene/chene-printemps.png" },
+        { saison: "Été", image: "/images/chene/chene-ete.png" },
+        { saison: "Automne", image: "/images/chene/chene-automne.png" },
+        { saison: "Hiver", image: "/images/chene/chene-hiver.png" }
+      ],
+      question: {
+        text: "Lequel de ces événements s’est passé avant la création de la famille du Gingko Biloba ?",
+        options: [
+            "L’apparition des dinosaures (230 millions d’années)",
+            "La naissance des premiers Homo habilis (2,8 millions d’années)",
+            "La création de l’univers due au Big Bang (13,8 milliards d’années)",
+            "L’apparition des premières plantes à fleurs (130 millions d’années)"
+        ],
+        correctAnswer: "La création de l’univers due au Big Bang (13,8 milliards d’années)"
+    },
+    },
 
-    // // marronnier
+    // marronnier
 
-    // marronnier: {
-    //   name: "Le Marronnier",
-    //   latin: "Aesculus hippocastanum",
-    //   description: "",
-    //   fruit: "C’est le marron, il est seul enfermé dans une bogue, c’est l’enveloppe piquante qui protège le fruit. Il est toxique.",
-    //   histoire: "On l’appelle également « marronnier d’Inde » car on le croyait venu d’Inde, or son origine provient de la péninsule balkanique en zone montagneuse. On confond parfois le marron et la châtaigne, la bogue du marron a des pics plus espacés que celle de la châtaigne. Attention, le marron ne se mange pas, il est toxique.",
-    //   feuille: "Ce sont des feuilles composées, elles sont palmées avec 5 ou 7 folioles dentelées. Ce sont de grandes feuilles mesurant entre 30 et 50 cm de long.",
-    //   fleur: "Les fleurs sont blanches ou roses, elles sont de forme pyramidale avec un axe sur lequel naissent les pédoncules des fleurs.",
-    //   hint: "Mon nom est repris par les journalistes pour parler d’un article de faible importance, ordinairement consacré à un événement récurrent et prévisible. On confond souvent mon fruit avec la châtaigne. Mon nom est très proche de celui d’une couleur.",
-    //   saison: "",
-    //   fruitImage: "/images/erable/erable-fruit.jpg",
-    //   feuilleImage: "/images/erable/erable-feuille.jpg",
-    //   fleureImage: "/images/erable/erable-fleur.jpg",
-    //   saisons: [
-    //     { saison: "Printemps", image: "/images/chene/chene-printemps.png" },
-    //     { saison: "Été", image: "/images/chene/chene-ete.png" },
-    //     { saison: "Automne", image: "/images/chene/chene-automne.png" },
-    //     { saison: "Hiver", image: "/images/chene/chene-hiver.png" }
-    //   ],
-    //   question: {
-    //     text: "Laquelle de ces affirmations est fausse ?",
-    //     options: [
-    //         "Le marron, fruit du marronnier, est toxique",
-    //         "La feuille du marronnier peut atteindre 50 cm",
-    //         "Le marronnier produit des fleurs blanches en forme de pyramide au printemps",
-    //         "La feuille de marronnier est une feuille simple (en une seule partie)"
-    //     ],
-    //     correctAnswer: "La feuille de marronnier est une feuille simple (en une seule partie)"
-    // },
-    // },
+    marronnier: {
+      name: "Le Marronnier",
+      latin: "Aesculus hippocastanum",
+      description: "",
+      fruit: "C’est le marron, il est seul enfermé dans une bogue, c’est l’enveloppe piquante qui protège le fruit. Il est toxique.",
+      histoire: "On l’appelle également « marronnier d’Inde » car on le croyait venu d’Inde, or son origine provient de la péninsule balkanique en zone montagneuse. On confond parfois le marron et la châtaigne, la bogue du marron a des pics plus espacés que celle de la châtaigne. Attention, le marron ne se mange pas, il est toxique.",
+      feuille: "Ce sont des feuilles composées, elles sont palmées avec 5 ou 7 folioles dentelées. Ce sont de grandes feuilles mesurant entre 30 et 50 cm de long.",
+      fleur: "Les fleurs sont blanches ou roses, elles sont de forme pyramidale avec un axe sur lequel naissent les pédoncules des fleurs.",
+      hint: "Mon nom est repris par les journalistes pour parler d’un article de faible importance, ordinairement consacré à un événement récurrent et prévisible. On confond souvent mon fruit avec la châtaigne. Mon nom est très proche de celui d’une couleur.",
+      saison: "",
+      fruitImage: "/images/erable/erable-fruit.jpg",
+      feuilleImage: "/images/erable/erable-feuille.jpg",
+      fleureImage: "/images/erable/erable-fleur.jpg",
+      saisons: [
+        { saison: "Printemps", image: "/images/chene/chene-printemps.png" },
+        { saison: "Été", image: "/images/chene/chene-ete.png" },
+        { saison: "Automne", image: "/images/chene/chene-automne.png" },
+        { saison: "Hiver", image: "/images/chene/chene-hiver.png" }
+      ],
+      question: {
+        text: "Laquelle de ces affirmations est fausse ?",
+        options: [
+            "Le marron, fruit du marronnier, est toxique",
+            "La feuille du marronnier peut atteindre 50 cm",
+            "Le marronnier produit des fleurs blanches en forme de pyramide au printemps",
+            "La feuille de marronnier est une feuille simple (en une seule partie)"
+        ],
+        correctAnswer: "La feuille de marronnier est une feuille simple (en une seule partie)"
+    },
+    },
 
-    // // noisetier
+    // noisetier
 
-    // noisetier: {
-    //   name: "Le Noisetier", 
-    //   latin: "Corylus avellana",
-    //   description: "",
-    //   fruit: "C’est la noisette, c’est un fruit à coque protégé par une enveloppe appelé involucre.",
-    //   histoire: "Les sourciers utilisent encore une branche de noisetier taillée en fourche pour détecter l’eau souterraine. Le noisetier est symbole de sagesse et de justice. Le noisetier intéresse aussi beaucoup les personnes qui recherchent des truffes (un champignon) car c’est un autre aliment apprécié des écureuils et des sangliers.",
-    //   feuille: "Ce sont des feuilles simples arrondies, dentées, poilues et pouvant mesurer 6 à 10 cm de long.",
-    //   fleur: "Les fleurs mâles sont disposées en longs chatons de 5 à 10 cm. Ils sont tombants et ont des écailles jaunes.",
-    //   hint: "le noisetier",
-    //   saison: "",
-    //   fruitImage: "/images/erable/erable-fruit.jpg",
-    //   feuilleImage: "/images/erable/erable-feuille.jpg",
-    //   fleureImage: "/images/erable/erable-fleur.jpg",
-    //   saisons: [
-    //     { saison: "Printemps", image: "/images/chene/chene-printemps.png" },
-    //     { saison: "Été", image: "/images/chene/chene-ete.png" },
-    //     { saison: "Automne", image: "/images/chene/chene-automne.png" },
-    //     { saison: "Hiver", image: "/images/chene/chene-hiver.png" }
-    //   ],
-    //   question: {
-    //     text: "Laquelle de cette affirmation est fausse ?",
-    //     options: [
-    //         "Le noisetier est symbole de sagesse et de justice.",
-    //         "Les sourciers utilisent le noisetier pour détecter l’eau souterraine.",
-    //         "Les noisettes sont récoltées au mois de mai",
-    //         "La noisette est un fruit à coque possédant un involucre"
-    //     ],
-    //     correctAnswer: "Les noisettes sont récoltées au mois de mai"
-    // },
-    // },
+    noisetier: {
+      name: "Le Noisetier", 
+      latin: "Corylus avellana",
+      description: "",
+      fruit: "C’est la noisette, c’est un fruit à coque protégé par une enveloppe appelé involucre.",
+      histoire: "Les sourciers utilisent encore une branche de noisetier taillée en fourche pour détecter l’eau souterraine. Le noisetier est symbole de sagesse et de justice. Le noisetier intéresse aussi beaucoup les personnes qui recherchent des truffes (un champignon) car c’est un autre aliment apprécié des écureuils et des sangliers.",
+      feuille: "Ce sont des feuilles simples arrondies, dentées, poilues et pouvant mesurer 6 à 10 cm de long.",
+      fleur: "Les fleurs mâles sont disposées en longs chatons de 5 à 10 cm. Ils sont tombants et ont des écailles jaunes.",
+      hint: "le noisetier",
+      saison: "",
+      fruitImage: "/images/erable/erable-fruit.jpg",
+      feuilleImage: "/images/erable/erable-feuille.jpg",
+      fleureImage: "/images/erable/erable-fleur.jpg",
+      saisons: [
+        { saison: "Printemps", image: "/images/chene/chene-printemps.png" },
+        { saison: "Été", image: "/images/chene/chene-ete.png" },
+        { saison: "Automne", image: "/images/chene/chene-automne.png" },
+        { saison: "Hiver", image: "/images/chene/chene-hiver.png" }
+      ],
+      question: {
+        text: "Laquelle de cette affirmation est fausse ?",
+        options: [
+            "Le noisetier est symbole de sagesse et de justice.",
+            "Les sourciers utilisent le noisetier pour détecter l’eau souterraine.",
+            "Les noisettes sont récoltées au mois de mai",
+            "La noisette est un fruit à coque possédant un involucre"
+        ],
+        correctAnswer: "Les noisettes sont récoltées au mois de mai"
+    },
+    },
 
     // // noyer
 
