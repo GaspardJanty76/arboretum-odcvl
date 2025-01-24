@@ -7,20 +7,20 @@ function HomePage() {
       <h1 className="text-4xl md:text-6xl font-bold mb-8 text-center">
         Bienvenue dans l'Arboretum
       </h1>
-      <p className="text-lg md:text-xl mb-6 text-center max-w-2xl">
+      <p className="text-lg md:text-xl px-4 mb-6 text-center max-w-2xl">
         Découvrez notre collection d'arbres, participez à des quizz amusants, et
         explorez notre univers à travers des QR codes interactifs !
       </p>
       <div className="flex flex-wrap justify-center gap-6">
         <Link
           to="/jeu"
-          className="px-8 py-4 bg-white text-green-600 font-semibold rounded-lg shadow-md hover:bg-gray-100 hover:shadow-lg transition duration-300"
+          className="flex-1 min-w-[200px] max-w-[300px] px-8 py-4 bg-white text-green-600 font-semibold rounded-lg shadow-md hover:bg-gray-100 hover:shadow-lg transition duration-300 text-center"
         >
           Jouer au Quizz
         </Link>
         <Link
           to="/qr-codes"
-          className="px-8 py-4 bg-white text-green-600 font-semibold rounded-lg shadow-md hover:bg-gray-100 hover:shadow-lg transition duration-300"
+          className="flex-1 min-w-[200px] max-w-[300px] px-8 py-4 bg-white text-green-600 font-semibold rounded-lg shadow-md hover:bg-gray-100 hover:shadow-lg transition duration-300 text-center"
         >
           Imprimer les QR codes
         </Link>

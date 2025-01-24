@@ -70,7 +70,9 @@ function Quiz() {
   return (
     <div className="bg-gray-100 min-h-screen flex flex-col">
       <header className="bg-green-600 py-6 px-6 flex justify-between items-center shadow-lg">
-        <h1 className="text-4xl font-bold text-white">Quizz Arboretum</h1>
+        <h1 className="text-2xl font-extrabold text-white tracking-wide">
+          Arboretum <span className="text-yellow-300">| Le Quiz</span>
+        </h1>
         <a href="https://odcvl.org/le-manoir-d-argueil">
           <img
             src="/images/logo_odcvl.png"
@@ -88,32 +90,55 @@ function Quiz() {
             </h2>
             <p className="text-xl mb-4">{currentQuestion.text}</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {currentQuestion.options.map((choice, index) => (
-                <button
-                  key={index}
-                  onClick={() => handleAnswerClick(choice)}
-                  disabled={selectedAnswer !== null}
-                  className={`py-3 px-6 rounded-lg shadow font-bold text-white flex justify-center items-center ${
-                    selectedAnswer
-                      ? choice === currentQuestion.correctAnswer
-                        ? 'bg-green-500'
-                        : choice === selectedAnswer
-                        ? 'bg-red-500'
-                        : 'bg-gray-400'
-                      : 'bg-gray-500 hover:bg-gray-600'
-                  }`}
-                >
-                  {isImage(choice) ? (
-                    <img
-                      src={choice}
-                      alt={`Option ${index + 1}`}
-                      className="max-h-48 w-full object-contain"
-                    />
-                  ) : (
-                  <span className="text-center text-lg">{choice}</span>
-                  )}
-                </button>
-              ))}
+              {currentQuestion.options.map((choice, index) => {
+                let buttonClasses = 'relative w-full rounded-lg overflow-hidden shadow-lg';
+                if (isImage(choice)) {
+                  buttonClasses += ' h-64 border-4';
+                } else {
+                  buttonClasses += ' h-16 bg-gray-500';
+                }
+
+                if (selectedAnswer !== null) {
+                  if (choice === currentQuestion.correctAnswer) {
+                    buttonClasses += isImage(choice)
+                      ? ' border-green-500'
+                      : ' bg-green-500';
+                  } else if (choice === selectedAnswer) {
+                    buttonClasses += isImage(choice)
+                      ? ' border-red-500'
+                      : ' bg-red-500';
+                  } else {
+                    buttonClasses += isImage(choice)
+                      ? ' border-gray-400'
+                      : ' bg-gray-400';
+                  }
+                } else {
+                  buttonClasses += isImage(choice)
+                    ? ' hover:border-green-300'
+                    : ' hover:bg-gray-600';
+                }
+
+                return (
+                  <button
+                    key={index}
+                    onClick={() => handleAnswerClick(choice)}
+                    disabled={selectedAnswer !== null}
+                    className={buttonClasses}
+                  >
+                    {isImage(choice) ? (
+                      <img
+                        src={choice}
+                        alt={`Option ${index + 1}`}
+                        className="absolute inset-0 w-full h-full object-cover"
+                      />
+                    ) : (
+                      <span className="absolute px-2 inset-0 flex items-center justify-center text-l text-white">
+                        {choice}
+                      </span>
+                    )}
+                  </button>
+                );
+              })}
             </div>
           </div>
         ) : (

@@ -39,58 +39,65 @@ function Game() {
         }, 1000);
       } else {
         if (!errorToastShown) {
-          toast.error('Aïe, ce n\'est pas le bon arbre, retentez votre chance !');
+          toast.error('Aïe, ce n\'est pas le bon arbre, retentez votre chance !', { theme: 'dark' });
           setErrorToastShown(true);
           setTimeout(() => setErrorToastShown(false), 3000);
         }
       }
-      
     }
   };
 
   const handleError = (err) => {
     console.error(err);
-    toast.error('Erreur de lecture du QR code.');
+    toast.error('Erreur de lecture du QR code.', { theme: 'dark' });
   };
 
   return (
-    <div>
+    <div className="min-h-screen flex flex-col bg-gradient-to-b from-green-100 via-green-50 to-white text-gray-800">
       <header className="bg-green-600 py-6 px-6 flex justify-between items-center shadow-lg">
         <div>
-          <h1 className="text-4xl font-bold text-white">Arboretum | Le jeu</h1>
+          <h1 className="text-2xl font-extrabold text-white tracking-wide">
+            Arboretum <span className="text-yellow-300">| Le Jeu</span>
+          </h1>
         </div>
         <a href="https://odcvl.org/le-manoir-d-argueil">
           <img
             src="/images/logo_odcvl.png"
             alt="Logo ODCVL"
-            className="w-24 h-24 object-contain"
+            className="w-16 h-16 object-contain hover:scale-105 transition-transform duration-300"
           />
         </a>
       </header>
+
       <ToastContainer />
-      <main>
-        <h2 className="text-2xl font-semibold text-center mb-6">
-          Indice : 
-          <br></br>
-          <span className="text-green-600">{parse(currentHint)}</span>
-        </h2>
-        <div className="flex justify-center mb-8">
-          <QRScanner
-            delay={300}
-            style={{ width: '100%', maxWidth: '400px', borderRadius: '12px', overflow: 'hidden' }}
-            onError={handleError}
-            onScan={handleScan}
-            key="environment"
-          
-            constraints={{ audio: false, video: { facingMode: "environment" }}}
-          />
+
+      <main className="flex-grow px-4 py-6 flex flex-col items-center">
+        <div className="w-full max-w-md bg-white shadow-lg rounded-xl p-6 text-center">
+          <h2 className="text-xl font-bold text-green-800 mb-4">Indice</h2>
+          <p className="text-gray-700 text-lg">{parse(currentHint)}</p>
         </div>
-        <p className="text-center text-gray-600 italic">
-          Scannez le QR code pour trouver l'arbre correspondant !
+
+        <div className="mt-10 w-full max-w-xs md:max-w-sm relative">
+          <div className="bg-gray-100 border-2 border-dashed border-green-500 rounded-xl overflow-hidden shadow-lg">
+            <QRScanner
+              delay={300}
+              style={{ width: '100%', borderRadius: '12px', overflow: 'hidden' }}
+              onError={handleError}
+              onScan={handleScan}
+              constraints={{ audio: false, video: { facingMode: 'environment' } }}
+            />
+          </div>
+        </div>
+
+        <p className="text-center text-gray-600 italic mt-6">
+          Scannez le QR code pour trouver l'arbre correspondant !
         </p>
       </main>
-      <footer className="bg-green-600 text-white text-center py-4">
-        <p>&copy; 2024 Arboretum Manoir d'argueil ODCVL.</p>
+
+      <footer className="bg-green-600 text-white text-center py-4 mt-6">
+        <p className="text-sm">
+          &copy; 2025 Arboretum Manoir d'Argueil ODCVL.
+        </p>
       </footer>
     </div>
   );

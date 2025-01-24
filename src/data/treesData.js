@@ -2,102 +2,102 @@ const treesData = {
     
     // chene
 
-    chene: {
-      name: "Le Chêne",
-      latin: "Quercus robur",
-      description: "Le chêne est un grand arbre solide, connu pour vivre très longtemps. Son bois est dur et très utilisé pour fabriquer des meubles ou des constructions. Le chêne symbolise la force et la longévité.",
-      fruit: "C’est le gland, c’est un fruit de type akène, il est fixé sur une cupule. Il est très apprécié par les sangliers, car très abondant en forêt.",
-      histoire: "L’existence du chêne remonte à plus de 35 millions d’années. Il est symbole de Force, c’est un bois lourd, dur et résistant. Il est très utilisé en menuiserie et ébénisterie. On utilise l’écorce d’un certain chêne : le chêne liège pour créer les bouchons en cette matière. Certaines espèces de chênes peuvent vivre plus de 1 000 ans.",
-      feuille: "Ce sont des feuilles simples, elles sont de forme crénelée, c’est-à-dire qu’elles forment un enchaînement de lobes. Elles mesurent entre 12 et 22 cm de long.",
-      fleur: "Les fleurs sont jaunâtres, elles forment des chatons de 2 à 3 cm de long.",
-      hint: "Le plus vieux de mon espèce se trouve à Allouville-Bellefosse et aurait plus de 1200 ans, il contient même une petite chapelle à l’intérieur de son tronc. D’après la fable de La Fontaine, je fus déraciné par le vent alors que mon ami le Roseau, lui se plie mais ne se rompt. Mon fruit s’appelle le gland.",
-      saison: "C’est un feuillu qui est caduc, donc qui perd ses feuilles en hiver.",
-      fruitImage: "/images/chene/chene-fruit.jpg",
-      feuilleImage: "/images/chene/chene-feuille.jpg",
-      fleureImage: "/images/chene/chene-fleure.jpg",
-      saisons: [
-        { saison: "Printemps", image: "/images/chene/chene-printemps.png" },
-        { saison: "Été", image: "/images/chene/chene-ete.png" },
-        { saison: "Automne", image: "/images/chene/chene-automne.png" },
-        { saison: "Hiver", image: "/images/chene/chene-hiver.png" }
-      ],
-      question: {
-        text: 'Comment appelle-t-on le "chapeau" qui relit le gland à la branche ?',
-        options: [
-            "Une cupule",
-            "Une crapule",
-            "Une coupole",
-            "Un sépale"
-        ],
-        correctAnswer: "Une cupule"
-    },
-    },
+    // chene: {
+    //   name: "Le Chêne",
+    //   latin: "Quercus robur",
+    //   description: "Le chêne est un grand arbre solide, connu pour vivre très longtemps. Son bois est dur et très utilisé pour fabriquer des meubles ou des constructions. Le chêne symbolise la force et la longévité.",
+    //   fruit: "C’est le gland, c’est un fruit de type akène, il est fixé sur une cupule. Il est très apprécié par les sangliers, car très abondant en forêt.",
+    //   histoire: "L’existence du chêne remonte à plus de 35 millions d’années. Il est symbole de Force, c’est un bois lourd, dur et résistant. Il est très utilisé en menuiserie et ébénisterie. On utilise l’écorce d’un certain chêne : le chêne liège pour créer les bouchons en cette matière. Certaines espèces de chênes peuvent vivre plus de 1 000 ans.",
+    //   feuille: "Ce sont des feuilles simples, elles sont de forme crénelée, c’est-à-dire qu’elles forment un enchaînement de lobes. Elles mesurent entre 12 et 22 cm de long.",
+    //   fleur: "Les fleurs sont jaunâtres, elles forment des chatons de 2 à 3 cm de long.",
+    //   hint: "Le plus vieux de mon espèce se trouve à Allouville-Bellefosse et aurait plus de 1200 ans, il contient même une petite chapelle à l’intérieur de son tronc. D’après la fable de La Fontaine, je fus déraciné par le vent alors que mon ami le Roseau, lui se plie mais ne se rompt. Mon fruit s’appelle le gland.",
+    //   saison: "C’est un feuillu qui est caduc, donc qui perd ses feuilles en hiver.",
+    //   fruitImage: "/images/chene/chene-fruit.jpg",
+    //   feuilleImage: "/images/chene/chene-feuille.jpg",
+    //   fleureImage: "/images/chene/chene-fleure.jpg",
+    //   saisons: [
+    //     { saison: "Printemps", image: "/images/chene/chene-printemps.png" },
+    //     { saison: "Été", image: "/images/chene/chene-ete.png" },
+    //     { saison: "Automne", image: "/images/chene/chene-automne.png" },
+    //     { saison: "Hiver", image: "/images/chene/chene-hiver.png" }
+    //   ],
+    //   question: {
+    //     text: 'Comment appelle-t-on le "chapeau" qui relit le gland à la branche ?',
+    //     options: [
+    //         "Une cupule",
+    //         "Une crapule",
+    //         "Une coupole",
+    //         "Un sépale"
+    //     ],
+    //     correctAnswer: "Une cupule"
+    // },
+    // },
 
-    // Catalpa
+    // // Catalpa
 
-    catalpa: {
-      name: "Le Catalpa",
-      latin: "Catalpa bignonioides",
-      description: "Le catalpa est un arbre majestueux, au feuillage large et à la floraison spectaculaire. Il est souvent planté pour son apparence décorative avec ses grandes feuilles en forme de cœur et ses grappes de fleurs blanches ou violettes. Le catalpa est également apprécié pour son bois léger et ses propriétés d'ombrage. Il symbolise la protection et la beauté naturelle.",
-      fruit: "Les fruits sont de longues capsules ou gousses pleines de graines. Elles sont allongées, de 20 à 40 cm, ressemblant à des haricots.",
-      histoire: "Il provient des Etats-Unis qui a gardé son nom d’origine, donné par les Indiens Cherokee qui occupaient ce territoire à l’époque : cela signifie « haricot ».Depuis le début du XVIIIe siècle, il a été introduit en Europe comme arbre d’ornement dans les parcs.",
-      feuille: "Ce sont des feuilles simples, lisses en forme de cœur. Elles sont très grandes entre 10 et 25 cm. Elles dégagent une odeur désagréable quand on les froisse.",
-      fleur: "Les fleurs sont blanches, légèrement colorées de jaune et violet. Elles mesurent de 3 à 4 cm de long.",
-      hint: "<span class='red-text'><strong>C</span></strong>herokee (peuple indien d’amérique) pour dire haricot<br><span class='red-text'><strong>A</span></strong>mérique du Nord <br><span class='red-text'><strong>T</span></strong>rès grandes feuilles <br><span class='red-text'><strong>A</span></strong>tteint entre 4 et 6m <br><span class='red-text'><strong>L</span></strong>ongues gousses pleines de graines en été <br><span class='red-text'><strong>P</span></strong>roduit une odeur qui éloigne mouches et moustiques <br><span class='red-text'><strong>A</span></strong>ntiseptiques & antiparasitaires",
-      saison: "",
-      fruitImage: "/images/catalpa/catalpa-fruit.jpg",
-      feuilleImage: "/images/catalpa/catalpa-feuille.jpg",
-      fleureImage: "/images/catalpa/catalpa-fleur.jpg",
-      saisons: [
-        { saison: "Printemps", image: "/images/chene/chene-printemps.png" },
-        { saison: "Été", image: "/images/chene/chene-ete.png" },
-        { saison: "Automne", image: "/images/chene/chene-automne.png" },
-        { saison: "Hiver", image: "/images/chene/chene-hiver.png" }
-      ],
-      question: {
-        text: "Comment appelle-t-on un arbre qui perd ses feuilles en hiver ?",
-        options: [
-            "Persistant",
-            "Caduc",
-            "Résineux",
-            "Conifère"
-        ],
-        correctAnswer: "Caduc"
-    },
-    },
+    // catalpa: {
+    //   name: "Le Catalpa",
+    //   latin: "Catalpa bignonioides",
+    //   description: "Le catalpa est un arbre majestueux, au feuillage large et à la floraison spectaculaire. Il est souvent planté pour son apparence décorative avec ses grandes feuilles en forme de cœur et ses grappes de fleurs blanches ou violettes. Le catalpa est également apprécié pour son bois léger et ses propriétés d'ombrage. Il symbolise la protection et la beauté naturelle.",
+    //   fruit: "Les fruits sont de longues capsules ou gousses pleines de graines. Elles sont allongées, de 20 à 40 cm, ressemblant à des haricots.",
+    //   histoire: "Il provient des Etats-Unis qui a gardé son nom d’origine, donné par les Indiens Cherokee qui occupaient ce territoire à l’époque : cela signifie « haricot ».Depuis le début du XVIIIe siècle, il a été introduit en Europe comme arbre d’ornement dans les parcs.",
+    //   feuille: "Ce sont des feuilles simples, lisses en forme de cœur. Elles sont très grandes entre 10 et 25 cm. Elles dégagent une odeur désagréable quand on les froisse.",
+    //   fleur: "Les fleurs sont blanches, légèrement colorées de jaune et violet. Elles mesurent de 3 à 4 cm de long.",
+    //   hint: "<span class='red-text'><strong>C</span></strong>herokee (peuple indien d’amérique) pour dire haricot<br><span class='red-text'><strong>A</span></strong>mérique du Nord <br><span class='red-text'><strong>T</span></strong>rès grandes feuilles <br><span class='red-text'><strong>A</span></strong>tteint entre 4 et 6m <br><span class='red-text'><strong>L</span></strong>ongues gousses pleines de graines en été <br><span class='red-text'><strong>P</span></strong>roduit une odeur qui éloigne mouches et moustiques <br><span class='red-text'><strong>A</span></strong>ntiseptiques & antiparasitaires",
+    //   saison: "",
+    //   fruitImage: "/images/catalpa/catalpa-fruit.jpg",
+    //   feuilleImage: "/images/catalpa/catalpa-feuille.jpg",
+    //   fleureImage: "/images/catalpa/catalpa-fleur.jpg",
+    //   saisons: [
+    //     { saison: "Printemps", image: "/images/chene/chene-printemps.png" },
+    //     { saison: "Été", image: "/images/chene/chene-ete.png" },
+    //     { saison: "Automne", image: "/images/chene/chene-automne.png" },
+    //     { saison: "Hiver", image: "/images/chene/chene-hiver.png" }
+    //   ],
+    //   question: {
+    //     text: "Comment appelle-t-on un arbre qui perd ses feuilles en hiver ?",
+    //     options: [
+    //         "Persistant",
+    //         "Caduc",
+    //         "Résineux",
+    //         "Conifère"
+    //     ],
+    //     correctAnswer: "Caduc"
+    // },
+    // },
 
-    // cedre du liban
+    // // cedre du liban
 
-    cedreduliban: {
-      name: "Le Cèdre du Liban",
-      latin: "Cedrus libani",
-      description: "Le cèdre du Liban est un arbre imposant et majestueux, réputé pour sa longévité et sa résistance. Il possède un bois précieux, souvent utilisé dans la construction et la sculpture. Ses grandes branches étendues et ses aiguilles persistantes en font un symbole de force, de sagesse et d'immortalité, et il est souvent associé à des paysages montagneux majestueux.",
-      fruit: "C’est le cône, il est ovale, avec une surface lisse. Il pousse vers le haut sur les branches. Il mesure entre 8 et 10 cm de long.",
-      histoire: "Le Cèdre du Liban a été introduit en Europe vers 1650. Mais il existe au Liban depuis le IIIe millénaire avant J.-C. C’est l’emblème national du Liban et notamment sur son drapeau et ses pièces de monnaie. Il est symbole d’immortalité et de longévité. Il peut vivre plus de 2 000 ans.",
-      feuille: "Ce sont des aiguilles, elles sont implantées en forme de bouquets sur la branche. Elles mesurent de 3 à 3,5 cm.",
-      fleur: "Ce sont des chatons, de couleur brune de forme allongée et conique.",
-      hint: "Je suis un conifère qui peut vivre 2000 ans. Mes aiguilles sont réunies en rosettes sur des rameaux courts. Je suis représenté sur le drapeau du Liban. Remet mes lettres dans l’ordre : E E R C D ",
-      saison: "",
-      fruitImage: "/images/cedreduliban/cedreduliban-fruit.jpg",
-      feuilleImage: "/images/cedreduliban/cedreduliban-feuille.png",
-      fleureImage: "/images/cedreduliban/cedreduliban-fleur.jpg",
-      saisons: [
-        { saison: "Printemps", image: "/images/chene/chene-printemps.png" },
-        { saison: "Été", image: "/images/chene/chene-ete.png" },
-        { saison: "Automne", image: "/images/chene/chene-automne.png" },
-        { saison: "Hiver", image: "/images/chene/chene-hiver.png" }
-      ],
-      question: {
-        text: "Quel nom porte les fleurs du cèdre de couleur brune et de forme allongée conique ?",
-        options: [
-            "Chatons",
-            "Chiots",
-            "Poulains",
-            "Porcelets"
-        ],
-        correctAnswer: "Chatons"
-    },
-    },
+    // cedreduliban: {
+    //   name: "Le Cèdre du Liban",
+    //   latin: "Cedrus libani",
+    //   description: "Le cèdre du Liban est un arbre imposant et majestueux, réputé pour sa longévité et sa résistance. Il possède un bois précieux, souvent utilisé dans la construction et la sculpture. Ses grandes branches étendues et ses aiguilles persistantes en font un symbole de force, de sagesse et d'immortalité, et il est souvent associé à des paysages montagneux majestueux.",
+    //   fruit: "C’est le cône, il est ovale, avec une surface lisse. Il pousse vers le haut sur les branches. Il mesure entre 8 et 10 cm de long.",
+    //   histoire: "Le Cèdre du Liban a été introduit en Europe vers 1650. Mais il existe au Liban depuis le IIIe millénaire avant J.-C. C’est l’emblème national du Liban et notamment sur son drapeau et ses pièces de monnaie. Il est symbole d’immortalité et de longévité. Il peut vivre plus de 2 000 ans.",
+    //   feuille: "Ce sont des aiguilles, elles sont implantées en forme de bouquets sur la branche. Elles mesurent de 3 à 3,5 cm.",
+    //   fleur: "Ce sont des chatons, de couleur brune de forme allongée et conique.",
+    //   hint: "Je suis un conifère qui peut vivre 2000 ans. Mes aiguilles sont réunies en rosettes sur des rameaux courts. Je suis représenté sur le drapeau du Liban. Remet mes lettres dans l’ordre : E E R C D ",
+    //   saison: "",
+    //   fruitImage: "/images/cedreduliban/cedreduliban-fruit.jpg",
+    //   feuilleImage: "/images/cedreduliban/cedreduliban-feuille.png",
+    //   fleureImage: "/images/cedreduliban/cedreduliban-fleur.jpg",
+    //   saisons: [
+    //     { saison: "Printemps", image: "/images/chene/chene-printemps.png" },
+    //     { saison: "Été", image: "/images/chene/chene-ete.png" },
+    //     { saison: "Automne", image: "/images/chene/chene-automne.png" },
+    //     { saison: "Hiver", image: "/images/chene/chene-hiver.png" }
+    //   ],
+    //   question: {
+    //     text: "Quel nom porte les fleurs du cèdre de couleur brune et de forme allongée conique ?",
+    //     options: [
+    //         "Chatons",
+    //         "Chiots",
+    //         "Poulains",
+    //         "Porcelets"
+    //     ],
+    //     correctAnswer: "Chatons"
+    // },
+    // },
 
     // cerisier
 
@@ -142,7 +142,7 @@ const treesData = {
       histoire: "Le frêne perd ses feuilles encore vertes en hiver, par contre les fruits restent en place tout l'hiver. Le frêne est un arbre qui représente la longévité et la force. Il est utilisé depuis la préhistoire de façon médicinale (douleurs articulaires) mais aussi pour les outils (manches de pelles ou autre) ou pour les arcs, car son bois est très souple.",
       feuille: "Ce sont des feuilles composées, avec 5 à 11 folioles opposées ovales aux bords finement dentés. Elles mesurent entre 10 et 15 cm de long.",
       fleur: "Les fleurs poussent en grappes, elles sont petites et jaune verdâtre.",
-      hint: "UN ARBRE DES BRANCHES.<br>DES <span class='red-text'><strong>_</strong></span>EUILLES.<br>DES PÉTIOLES.<br>DES FOLIOLES.<br>UN MONDE RAMIFIE<br>QUI BOUGE, BRUIT, BONDIT.<br>UN <span class='red-text'><strong>_</strong></span>OYAUME DE VERDURE<br>DE VERTIG<span class='red-text'><strong>_</strong></span>S ET DE VENT,<br>UN LABYRI<span class='red-text'><strong>_</strong></span>THE DE SOUFFLES<br>ET DE MURMURES.<br>UN ARBR<span class='red-text'><strong>_</strong></span> EN SOMME.<br><br>POEME DE JACQUES LACARRIERE",
+      hint: "UN ARBRE DES BRANCHES.<br>DES <span class='red-text'><strong>_</strong></span>EUILLES.<br>DES PÉTIOLES.<br>DES FOLIOLES.<br>UN MONDE RAMIFIE<br>QUI BOUGE, BRUIT, BONDIT.<br>UN <span class='red-text'><strong>_</strong></span>OYAUME DE VERDURE<br>DE VERTIG<span class='red-text'><strong>_</strong></span>S ET DE VENT,<br>UN LABYRI<span class='red-text'><strong>_</strong></span>THE DE SOUFFLES<br>ET DE MURMURES.<br>UN ARBR<span class='red-text'><strong>_</strong></span> EN SOMME.<br><br><em>POEME DE JACQUES LACARRIERE</em>",
       saison: "",
       fruitImage: "/images/erable/erable-fruit.jpg",
       feuilleImage: "/images/erable/erable-feuille.jpg",
