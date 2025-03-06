@@ -26,7 +26,7 @@ function TreePage() {
     return <h1 className="text-center text-red-600">Arbre non trouvé</h1>;
   }
 
-  const treeUrl = `http://192.168.12.25:3000/arbre/${treeName}`;
+  const treeUrl = `https://f376-194-3-2-195.ngrok-free.app/arbre/${treeName}`;
   
   const treeNames = Object.keys(treesData);
   const currentIndex = treeNames.indexOf(treeName);
@@ -103,23 +103,9 @@ function TreePage() {
               className="object-cover h-48 w-full my-4 rounded-md shadow-lg"
             />
           </div>
-
           <div className="bg-green-600 text-white rounded-lg p-4">
-            <Carousel
-              showThumbs={false}
-              autoPlay
-              infiniteLoop
-              interval={7000}
-              showStatus={false}
-              showArrows={false}
-            >
-              {tree.saisons.map((saison, index) => (
-                <div key={index}>
-                  <img src={saison.image} alt={`Image de l'arbre en ${saison.saison}`} className="rounded-lg" />
-                  <p className="legend">{saison.saison}</p>
-                </div>
-              ))}
-            </Carousel>
+            <h3 className="text-2xl font-semibold">Saisons</h3>
+            <p className="mt-2">{tree.saison}</p>
           </div>
         </div>
 

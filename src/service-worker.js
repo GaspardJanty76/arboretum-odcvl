@@ -4,6 +4,12 @@ const urlsToCache = [
   '/index.html',
   '/static/css/main.css',
   '/static/js/main.js',
+  '/images/catalpa/catalpa-feuille.jpg',
+  '/images/catalpa/catalpa-fleur.jpg',
+  '/images/catalpa/catalpa-fruit.jpg',
+  '/image/cedreduliban/cedreduliban-feuille.jpg',
+  '/images/cedreduliban/cedreduliban-fleur.jpg',
+  '/images/cedreduliban/cedreduliban-fruit.jpg',
   '/images/cerisier/cerisier-fruit.jpg',
 ];
 
