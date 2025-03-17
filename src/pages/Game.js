@@ -11,7 +11,6 @@ function Game() {
   const navigate = useNavigate();
   const [errorToastShown, setErrorToastShown] = useState(false);
 
-  // Récupérer 'selectedZone' depuis localStorage si disponible
   const [selectedZone, setSelectedZone] = useState(localStorage.getItem("selectedZone") || "diamant");
 
   useEffect(() => {

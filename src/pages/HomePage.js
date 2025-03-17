@@ -2,21 +2,19 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 function HomePage() {
-  const [selectedZone, setSelectedZone] = useState("diamant"); // Zone par défaut
+  const [selectedZone, setSelectedZone] = useState("diamant");
   const navigate = useNavigate();
 
-  // Récupérer la zone sélectionnée depuis localStorage lors du chargement
   useEffect(() => {
     const storedZone = localStorage.getItem("selectedZone");
     if (storedZone) {
-      setSelectedZone(storedZone); // Mettre à jour l'état si une zone est trouvée
+      setSelectedZone(storedZone);
     }
-  }, []); // Cette fonction s'exécute uniquement au premier rendu
+  }, []);
 
   const handleStartGame = () => {
     localStorage.setItem("totalScore", "0");
     localStorage.removeItem("quizStarted");
-    // Sauvegarder selectedZone dans localStorage avant de naviguer
     localStorage.setItem("selectedZone", selectedZone); 
     navigate(`/jeu?zone=${selectedZone}`);
   };
@@ -31,23 +29,22 @@ function HomePage() {
         Bienvenue dans l'Arboretum
       </h1>
       <p className="text-lg md:text-xl px-4 mb-6 text-center max-w-2xl">
-        Découvrez notre collection d'arbres, participez à des quizz amusants, et explorez notre univers à travers des QR codes interactifs !
+        Découvrez notre collection d'arbres, participez à des quiz amusants, et explorez notre univers à travers des QR codes interactifs !
       </p>
 
-      {/* Sélecteur de zone */}
       <div className="mb-6">
         <label className="text-lg font-semibold">Choisissez une zone :</label>
         <select
           value={selectedZone}
           onChange={(e) => {
-            setSelectedZone(e.target.value);  // Mettre à jour l'état de selectedZone
-            localStorage.setItem("selectedZone", e.target.value);  // Sauvegarder la nouvelle zone dans localStorage
+            setSelectedZone(e.target.value);
+            localStorage.setItem("selectedZone", e.target.value);
           }}
           className="ml-2 p-2 rounded-lg text-green-800"
         >
-          <option value="diamant">Diamant</option>
-          <option value="perle">Perle</option>
-          <option value="platine">Platine</option>
+          <option value="perle">Perle (~50 min)</option>
+          <option value="diamant">Diamant (~40 min)</option>
+          <option value="platine">Platine (~30 min)</option>
         </select>
       </div>
 
