@@ -83,11 +83,11 @@ function Game() {
 
       <ToastContainer />
 
-      <main className="flex-grow px-4 py-6 flex flex-col items-center">
+      <main className="flex-grow h-full px-4 py-6 flex flex-col items-center justify-center overflow-hidden">
         {filteredTrees.length > 0 ? (
           <div className="w-full max-w-md bg-white shadow-lg rounded-xl p-6 text-center">
             <h2 className="text-xl font-bold text-green-800 mb-4">Indice</h2>
-            <p className="text-gray-700 text-lg">{parse(currentHint)}</p>
+            <p className="text-gray-700 text-s">{parse(currentHint)}</p>
           </div>
         ) : (
           <p className="text-red-600 font-semibold">
@@ -95,7 +95,7 @@ function Game() {
           </p>
         )}
 
-        <div className="mt-10 w-full max-w-xs md:max-w-sm relative">
+        <div className="mt-10 w-full max-w-xs md:max-w-xxs relative">
           <div className="bg-gray-100 border-2 border-dashed border-green-500 rounded-xl overflow-hidden shadow-lg">
             <QRScanner
               delay={300}
@@ -114,7 +114,7 @@ function Game() {
 
       <footer className="bg-green-600 text-white text-center py-4 mt-6">
         <p className="text-sm">
-          &copy; 2025 Arboretum Manoir d'Argueil ODCVL.
+          &copy; Arboretum Manoir d'Argueil ODCVL.
         </p>
       </footer>
     </div>

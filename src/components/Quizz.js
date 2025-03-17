@@ -78,7 +78,7 @@ function Quiz() {
           <img
             src="/images/logo_odcvl.png"
             alt="Logo ODCVL"
-            className="w-24 h-24 object-contain"
+            className="w-16 h-16 object-contain hover:scale-105 transition-transform duration-300"
           />
         </a>
       </header>
@@ -146,6 +146,11 @@ function Quiz() {
           <div className="text-center">
             <h2 className="text-2xl font-bold">Résultat</h2>
             <p className="text-xl">Score actuel : {totalScore}</p>
+            
+            <p className="text-xl mt-4 font-semibold">
+              {isAnswerCorrect ? "Bravo ! C'est la bonne réponse. 🎉" : "Dommage ! c'est la mauvaise réponse."}
+            </p>
+
             <div className="mt-6">
               <button
                 onClick={handleNext}
@@ -156,10 +161,11 @@ function Quiz() {
             </div>
           </div>
         )}
+
       </main>
 
       <footer className="bg-green-600 text-white text-center py-4">
-        <p>&copy; 2024 Arboretum Manoir d'argueil ODCVL.</p>
+        <p>&copy;Arboretum Manoir d'argueil ODCVL.</p>
       </footer>
     </div>
   );
