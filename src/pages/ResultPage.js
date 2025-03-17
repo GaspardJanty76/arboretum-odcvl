@@ -14,7 +14,7 @@ function ResultPage() {
       <main className="flex-grow px-4 md:px-8 py-6 text-center">
         <h2 className="text-3xl font-bold text-green-600">Félicitations !</h2>
         <p className="text-xl mt-4">
-          Vous avez terminé le quizz avec un score de :
+          Vous avez terminé le quiz avec un score de :
         </p>
         <p className="text-4xl font-bold text-green-700 mt-2">
           {globalScore} bonnes réponses !

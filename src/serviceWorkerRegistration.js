@@ -1,5 +1,3 @@
-// serviceWorkerRegistration.js
-
 // Vérifie si le navigateur supporte les Service Workers
 const isLocalhost = Boolean(
     window.location.hostname === 'localhost' ||
@@ -11,7 +9,7 @@ const isLocalhost = Boolean(
     if ('serviceWorker' in navigator) {
       // Enregistrement du service worker
       window.addEventListener('load', () => {
-        const swUrl = `${process.env.PUBLIC_URL}/service-worker.js`;
+        const swUrl = `${process.env.PUBLIC_URL}/custom-service-worker.js`;
   
         if (isLocalhost) {
           // Vérifie si le service worker est bien actif en localhost

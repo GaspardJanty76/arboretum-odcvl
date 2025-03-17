@@ -12,12 +12,17 @@ function HomePage() {
         explorez notre univers à travers des QR codes interactifs !
       </p>
       <div className="flex flex-wrap justify-center gap-6">
-        <Link
-          to="/jeu"
-          className="flex-1 min-w-[200px] max-w-[300px] px-8 py-4 bg-white text-green-600 font-semibold rounded-lg shadow-md hover:bg-gray-100 hover:shadow-lg transition duration-300 text-center"
-        >
-          Jouer au Quizz
-        </Link>
+      <Link
+        to="/jeu"
+        onClick={() => {
+          localStorage.setItem("totalScore", "0");
+          localStorage.removeItem("quizStarted");
+        }}
+        className="flex-1 min-w-[200px] max-w-[300px] px-8 py-4 bg-white text-green-600 font-semibold rounded-lg shadow-md hover:bg-gray-100 hover:shadow-lg transition duration-300 text-center"
+      >
+        Jouer au Quiz
+      </Link>
+
         <Link
           to="/qr-codes"
           className="flex-1 min-w-[200px] max-w-[300px] px-8 py-4 bg-white text-green-600 font-semibold rounded-lg shadow-md hover:bg-gray-100 hover:shadow-lg transition duration-300 text-center"

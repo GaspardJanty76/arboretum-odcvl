@@ -6,7 +6,7 @@ module.exports = {
     theme: {
       extend: {
         colors: {
-          backgroundCustom: '#FBF5E9', // Ajout de ta couleur personnalisée
+          backgroundCustom: '#FBF5E9',
         },
       },
     },
