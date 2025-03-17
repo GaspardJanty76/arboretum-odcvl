@@ -8,33 +8,46 @@ import parse from 'html-react-parser';
 
 function Game() {
   const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
+  const [errorToastShown, setErrorToastShown] = useState(false);
+
+  // Récupérer 'selectedZone' depuis localStorage si disponible
+  const [selectedZone, setSelectedZone] = useState(localStorage.getItem("selectedZone") || "diamant");
+
+  useEffect(() => {
+    const storedZone = localStorage.getItem("selectedZone");
+    if (storedZone) {
+      setSelectedZone(storedZone);
+    }
+  }, []);
+
+  const filteredTrees = Object.keys(treesData).filter(
+    (key) => treesData[key].zone === selectedZone
+  );
+
   const initialIndex = parseInt(searchParams.get('currentIndex')) || 0;
   const [currentIndex, setCurrentIndex] = useState(initialIndex);
   const [currentHint, setCurrentHint] = useState('');
-  const [errorToastShown, setErrorToastShown] = useState(false);
-  const navigate = useNavigate();
 
   useEffect(() => {
-    const treeKeys = Object.keys(treesData);
-    if (treeKeys[currentIndex]) {
-      setCurrentHint(treesData[treeKeys[currentIndex]].hint);
+    if (filteredTrees.length > 0 && filteredTrees[currentIndex]) {
+      setCurrentHint(treesData[filteredTrees[currentIndex]].hint);
     }
-  }, [currentIndex]);
+  }, [currentIndex, filteredTrees]);
 
   const handleScan = (data) => {
     if (data) {
       const url = new URL(data.text);
       const treeName = url.pathname.split('/').pop();
 
-      const treeKeys = Object.keys(treesData);
-      const correctTreeKey = treeKeys[currentIndex];
+      const correctTreeKey = filteredTrees[currentIndex];
 
       if (treeName === correctTreeKey) {
         setTimeout(() => {
-          if (currentIndex < treeKeys.length - 1) {
-            navigate(`/arbre/${treeName}?nextIndex=${currentIndex + 1}&isQuiz=true`);
+          if (currentIndex < filteredTrees.length - 1) {
+            navigate(`/arbre/${treeName}?nextIndex=${currentIndex + 1}&isQuiz=true&zone=${selectedZone}`);
           } else {
-            navigate(`/arbre/${treeName}?isQuiz=true`);
+            navigate(`/arbre/${treeName}?isQuiz=true&zone=${selectedZone}`);
           }
         }, 1000);
       } else {
@@ -72,10 +85,16 @@ function Game() {
       <ToastContainer />
 
       <main className="flex-grow px-4 py-6 flex flex-col items-center">
-        <div className="w-full max-w-md bg-white shadow-lg rounded-xl p-6 text-center">
-          <h2 className="text-xl font-bold text-green-800 mb-4">Indice</h2>
-          <p className="text-gray-700 text-lg">{parse(currentHint)}</p>
-        </div>
+        {filteredTrees.length > 0 ? (
+          <div className="w-full max-w-md bg-white shadow-lg rounded-xl p-6 text-center">
+            <h2 className="text-xl font-bold text-green-800 mb-4">Indice</h2>
+            <p className="text-gray-700 text-lg">{parse(currentHint)}</p>
+          </div>
+        ) : (
+          <p className="text-red-600 font-semibold">
+            Aucune donnée disponible pour cette zone.
+          </p>
+        )}
 
         <div className="mt-10 w-full max-w-xs md:max-w-sm relative">
           <div className="bg-gray-100 border-2 border-dashed border-green-500 rounded-xl overflow-hidden shadow-lg">

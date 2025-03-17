@@ -15,6 +15,7 @@ function Quiz() {
   const [searchParams] = useSearchParams();
   const treeName = searchParams.get('treeName');
   const nextIndex = searchParams.get('nextIndex');
+  const selectedZone = searchParams.get('zone') || localStorage.getItem("selectedZone");  // Prendre la zone depuis l'URL ou le localStorage
   const tree = treeData[treeName];
 
   useEffect(() => {
@@ -23,7 +24,7 @@ function Quiz() {
       setTotalScore(0);
       localStorage.setItem('totalScore', '0');
     }
-  }, []);
+  }, [currentQuestionIndex]);
 
   if (!tree) {
     return (
@@ -54,14 +55,14 @@ function Quiz() {
   };
 
   const handleFinishQuiz = () => {
-    navigate('/fin', { state: { globalScore: totalScore } });
+    navigate(`/fin?zone=${selectedZone}`, { state: { globalScore: totalScore } });
     localStorage.removeItem('quizStarted');
     localStorage.removeItem('totalScore');
   };
-
+  
   const handleNext = () => {
     if (nextIndex) {
-      navigate(`/jeu?currentIndex=${nextIndex}`);
+      navigate(`/jeu?currentIndex=${nextIndex}&zone=${selectedZone}`);
     } else {
       handleFinishQuiz();
     }
