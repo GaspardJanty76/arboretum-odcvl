@@ -135,7 +135,7 @@ function TreePage() {
       </main>
 
       <footer className="bg-green-600 text-white text-center py-4">
-        <p>&copy; 2024 Arboretum Manoir d'argueil ODCVL.</p>
+        <p>&copy;Arboretum Manoir d'argueil ODCVL.</p>
       </footer>
     </div>
   );
