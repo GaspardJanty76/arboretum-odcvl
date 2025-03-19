@@ -1,7 +1,5 @@
 # Arboretum pour ODCVL
 
-# Arboretum pour ODCVL
-
 Ce projet est une WebApp créée lors de mon alternance chez ODCVL.
 
 L'enjeu était de créer une activité ludique destinée aux enfants pour leur faire découvrir et apprendre les différents arbres présents au [Manoir d'Argueil](https://odcvl.org/le-manoir-d-argueil).
