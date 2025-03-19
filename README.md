@@ -1,70 +1,28 @@
-# Getting Started with Create React App
+# Arboretum pour ODCVL
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+**Ce projet est une WebApp créée lors de mon alternance chez ODCVL.**
 
-In the project directory, you can run:
 
-### `npm start`
+L'enjeu était de créer une activité ludique destinée aux enfants pour leur faire découvrir et apprendre les différents arbres présents au [Manoir d'Argueil](https://odcvl.org/le-manoir-d-argueil).
+L'activité devait être disponible sur format tablettes je suis donc parti sur une WebApp en utilisant React pour car il permet une gestion efficaces des composants étant donné que les pages de ma WebApp sont redondantes
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Le jeu s'articule autour de scan de QR codes de quiz. l'idée du jeu est donc d'avoir un indice pour deviner l'arbre, de s'y rendre, de scanner le QR code, si c'est le mauvais arbre on demande de recommencer et si c'est le bon arbre cela affiche une page descriptive de l'arbre. 
+Ensuite dès que les enfants ont terminés la lecture du descriptif ils peuvent passer à un petit quiz sur l'arbre précédemment vu avec un compteur de bonnes réponses et ensuite cela passe à l'abre suivant etc.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+J'ai découpé le domaine en  zones car il y a 16 arbres en tout dans au manoir d'Argueil et il fallait une activité qui ne dure par plus d'une heure donc on peut retrouver 3 zones (Diamant, Perle et Platine, un clin d'œil aux meilleurs jeux de la licence Pokémon :slight_smile:) donc on a 3 mini activités d'une durée comprise entre 30 et 50 minutes.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+On a la génération des QR codes intégrés à l'application pour une utilisation des plus simple 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Pour finir chaque QR code d'arbre est flashable indépendamment sans utiliser le jeu et cela permet d'afficher la page descriptive de ce dernier
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Ce projet à été pensé pour être modifiable et adaptable à n'importe quel activité si on garde le fonctionnement général car tous les descriptifs des arbres sont contenus dans un fichier treeData qui peut être modifiable à votre guise.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Le jeu est disponible en ligne via ce [lien](https://arboretum-odcvl.vercel.app/)**
