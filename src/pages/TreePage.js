@@ -110,28 +110,18 @@ function TreePage() {
         </div>
 
         {isQuiz && (
-          isLastTree ? (
-            <div className="text-center mt-8">
-              <button
-                onClick={handleNext}
-                className="px-6 py-3 bg-green-500 text-white font-bold rounded-md shadow hover:bg-green-600"
-              >
-                ➔ Passer au Quizz
-              </button>
-            </div>
-          ) : (
-            nextIndex !== null && (
-              <div className="text-center mt-8">
-                <button
-                  onClick={handleNext}
-                  className="px-6 py-3 bg-green-500 text-white font-bold rounded-md shadow hover:bg-green-600"
-                >
-                  ➔ Passer au Quizz
-                </button>
-              </div>
-            )
-          )
-        )}
+  (isLastTree || nextIndex !== null || nextIndex === null) && (
+    <div className="text-center mt-8">
+      <button
+        onClick={handleNext}
+        className="px-6 py-3 bg-green-500 text-white font-bold rounded-md shadow hover:bg-green-600"
+      >
+        ➔ Passer au Quiz
+      </button>
+    </div>
+  )
+)}
+
       </main>
 
       <footer className="bg-green-600 text-white text-center py-4">

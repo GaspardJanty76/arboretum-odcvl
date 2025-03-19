@@ -11,14 +11,14 @@ function Game() {
   const navigate = useNavigate();
   const [errorToastShown, setErrorToastShown] = useState(false);
 
-  const [selectedZone, setSelectedZone] = useState(localStorage.getItem("selectedZone") || "diamant");
+  // Gestion persistante de la zone sélectionnée
+  const [selectedZone, setSelectedZone] = useState(() => {
+    return localStorage.getItem("selectedZone") || "diamant";
+  });
 
   useEffect(() => {
-    const storedZone = localStorage.getItem("selectedZone");
-    if (storedZone) {
-      setSelectedZone(storedZone);
-    }
-  }, []);
+    localStorage.setItem("selectedZone", selectedZone);
+  }, [selectedZone]);
 
   const filteredTrees = Object.keys(treesData).filter(
     (key) => treesData[key].zone === selectedZone
