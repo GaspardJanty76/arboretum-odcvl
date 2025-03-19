@@ -36,12 +36,12 @@ function TreePage() {
   const handleNext = () => {
     if (nextIndex !== null) {
       if (isQuiz) {
-        navigate(`/quizz?nextIndex=${nextIndex}&treeName=${treeName}`);
+        navigate(`/quiz?nextIndex=${nextIndex}&treeName=${treeName}`);
       } else {
         navigate(`/arbre/${treeName}?nextIndex=${nextIndex}`);
       }
     } else {
-      navigate(`/quizz?treeName=${treeName}`);
+      navigate(`/quiz?treeName=${treeName}`);
     }
   };
 

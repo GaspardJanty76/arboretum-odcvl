@@ -14,7 +14,7 @@ function App() {
         <div>
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/quizz" element={<Quizz />} />
+            <Route path="/quiz" element={<Quizz />} />
             <Route path="/arbre/:treeName" element={<TreePage />} />
             <Route path="/jeu" element={<Game />} />
             <Route path="/fin" element={<ResultPage />} />

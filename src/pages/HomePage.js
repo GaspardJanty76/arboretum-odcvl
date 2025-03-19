@@ -52,7 +52,7 @@ function HomePage() {
         onClick={handleStartGame}
         className="px-8 py-4 bg-white text-green-600 font-semibold rounded-lg shadow-md hover:bg-gray-100 hover:shadow-lg transition duration-300"
       >
-        Jouer au Quiz
+        Lancer l'activité
       </button>
       <br />
       <button
