@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { useParams, useSearchParams, useNavigate } from "react-router-dom";
-import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import treesData from "../data/treesData";
 import './TreePage.css';
@@ -17,8 +16,8 @@ function TreePage() {
   const isQuiz = searchParams.get('isQuiz') === 'true';
 
   useEffect(() => {
-    if (success) {
-      toast.success('Bravo, c’est le bon arbre !');
+    if (success === "true") {
+      toast.success('Bravo, c’est le bon arbre !', { position: "top-center"});
     }
   }, [success]);
 

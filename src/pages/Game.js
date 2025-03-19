@@ -9,9 +9,7 @@ import parse from 'html-react-parser';
 function Game() {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
-  const [errorToastShown, setErrorToastShown] = useState(false);
 
-  // Gestion persistante de la zone sélectionnée
   const [selectedZone, setSelectedZone] = useState(() => {
     return localStorage.getItem("selectedZone") || "diamant";
   });
@@ -27,6 +25,7 @@ function Game() {
   const initialIndex = parseInt(searchParams.get('currentIndex')) || 0;
   const [currentIndex, setCurrentIndex] = useState(initialIndex);
   const [currentHint, setCurrentHint] = useState('');
+  const [scanning, setScanning] = useState(true); // Force la réactivation du scanner
 
   useEffect(() => {
     if (filteredTrees.length > 0 && filteredTrees[currentIndex]) {
@@ -38,30 +37,27 @@ function Game() {
     if (data) {
       const url = new URL(data.text);
       const treeName = url.pathname.split('/').pop();
-
       const correctTreeKey = filteredTrees[currentIndex];
 
       if (treeName === correctTreeKey) {
         setTimeout(() => {
           if (currentIndex < filteredTrees.length - 1) {
-            navigate(`/arbre/${treeName}?nextIndex=${currentIndex + 1}&isQuiz=true&zone=${selectedZone}`);
+            navigate(`/arbre/${treeName}?nextIndex=${currentIndex + 1}&isQuiz=true&zone=${selectedZone}&success=true`);
           } else {
-            navigate(`/arbre/${treeName}?isQuiz=true&zone=${selectedZone}`);
+            navigate(`/arbre/${treeName}?isQuiz=true&zone=${selectedZone}&success=true`);
           }
         }, 1000);
       } else {
-        if (!errorToastShown) {
-          toast.error('Aïe, ce n\'est pas le bon arbre, retentez votre chance !', { theme: 'dark' });
-          setErrorToastShown(true);
-          setTimeout(() => setErrorToastShown(false), 3000);
-        }
+        toast.error('Aïe, ce n\'est pas le bon arbre, retentez votre chance !');
+        setScanning(false);
+        setTimeout(() => setScanning(true), 1000);
       }
     }
   };
 
   const handleError = (err) => {
     console.error(err);
-    toast.error('Erreur de lecture du QR code.', { theme: 'dark' });
+    toast.error('Erreur de lecture du QR code.');
   };
 
   return (
@@ -81,7 +77,7 @@ function Game() {
         </a>
       </header>
 
-      <ToastContainer />
+      <ToastContainer position="top-center" />
 
       <main className="flex-grow h-full px-4 py-6 flex flex-col items-center justify-center overflow-hidden">
         {filteredTrees.length > 0 ? (
@@ -97,13 +93,15 @@ function Game() {
 
         <div className="mt-10 w-full max-w-xs md:max-w-xxs relative">
           <div className="bg-gray-100 border-2 border-dashed border-green-500 rounded-xl overflow-hidden shadow-lg">
-            <QRScanner
-              delay={300}
-              style={{ width: '100%', borderRadius: '12px', overflow: 'hidden' }}
-              onError={handleError}
-              onScan={handleScan}
-              constraints={{ audio: false, video: { facingMode: 'environment' } }}
-            />
+            {scanning && (
+              <QRScanner
+                delay={300}
+                style={{ width: '100%', borderRadius: '12px', overflow: 'hidden' }}
+                onError={handleError}
+                onScan={handleScan}
+                constraints={{ audio: false, video: { facingMode: 'environment' } }}
+              />
+            )}
           </div>
         </div>
 
